@@ -71,3 +71,42 @@ body{
     font-weight: 900;
     display: none;
 }
+
+.sunicon{
+    width: 150px;
+    margin-top: 30px;
+}
+
+.weather h1{
+    font-size: 80px;
+    font-weight: 800;
+}
+
+.weather h2{
+    font-size: 45px;
+    font-weight: 500;
+    margin-top: -10px;
+}
+
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 50px;
+}
+
+.col{
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.col img{
+    width: 40px;
+    margin-right: 20px;
+}
+
+.huminidity,.wind{
+    margin-top: -7px;
+}

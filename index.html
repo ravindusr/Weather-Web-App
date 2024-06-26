@@ -22,20 +22,20 @@
         </div>
 
         <div class="weather">
-            <img src="img/sun.png" class="sunicon">
+            <img src="img/sun.png" class="weathericon">
             <h1 class="temp">27°C</h1>
             <h2 class="city">Colombo</h2>
 
             <div class="details">
                 <div class="col">
-                    <img src="img/humidity.png" >
+                    <img src="img/humidity.png">
                     <div>
                         <p class="huminidity">50%</p>
                         <p>huminidity</p>
                     </div>
                 </div>
                 <div class="col">
-                    <img src="img/wind.png" >
+                    <img src="img/wind.png">
                     <div>
                         <p class="Wind">50 km/h</p>
                         <p>Wind Speed</p>
@@ -44,6 +44,53 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const apiKey = "4f1fdaea8a5f5031e345a186fec30290";
+        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+        const search = document.querySelector(".search input");
+        const searchbtn = document.querySelector(".search button");
+        const weathericon = document.querySelector(".weathericon");
+
+        async function checkWeather(city) {
+            const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+
+            if (response.status == 404) {
+                document.querySelector(".Error").style.display = "block";
+                document.querySelector(".weather").style.display = "none";
+
+            } else {
+                const data = await response.json();
+
+
+
+                document.querySelector(".city").innerHTML = data.name;
+                document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
+                document.querySelector(".huminidity").innerHTML = data.main.humidity + "%";
+                document.querySelector(".Wind").innerHTML = data.wind.speed + "Km/h";
+
+                if (data.weather[0].main == "Clouds") {
+                    weathericon.src = "img/cloudy.png";
+
+                }
+
+                else if (data.weather[0].main == "Rain") {
+                    weathericon.src = "img/rain.png";
+
+                }
+
+                document.querySelector(".weather").style.display = "block";
+                document.querySelector(".Error").style.display = "none";
+            }
+
+        }
+
+        searchbtn.addEventListener("click", () => {
+            checkWeather(search.value);
+        });
+
+    </script>
 
 </body>
 

@@ -72,7 +72,7 @@ body{
     display: none;
 }
 
-.sunicon{
+.weathericon{
     width: 150px;
     margin-top: 30px;
 }
@@ -107,6 +107,6 @@ body{
     margin-right: 20px;
 }
 
-.huminidity,.wind{
-    margin-top: -7px;
+.Wind,.huminidity{
+    font-size: 30px;
 }

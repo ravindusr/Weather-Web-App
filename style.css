@@ -84,8 +84,8 @@ body{
 
 .weather h2{
     font-size: 45px;
-    font-weight: 500;
-    margin-top: -10px;
+    font-weight: 800;
+    margin-top: -50px;
 }
 
 .details{
@@ -103,10 +103,12 @@ body{
 }
 
 .col img{
-    width: 40px;
+    width: 50px;
     margin-right: 20px;
 }
 
 .Wind,.huminidity{
     font-size: 30px;
 }
+
+

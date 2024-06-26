@@ -80,6 +80,26 @@
 
                 }
 
+                else if (data.weather[0].main == "Clear") {
+                    weathericon.src = "img/sun.png";
+
+                }
+
+                else if (data.weather[0].main == "Drizzle") {
+                    weathericon.src = "img/Drizzle.png";
+
+                }
+
+                else if (data.weather[0].main == "Mist") {
+                    weathericon.src = "img/mist.png";
+
+                }
+
+                else if (data.weather[0].main == "Snow") {
+                    weathericon.src = "img/snow.png";
+
+                }
+
                 document.querySelector(".weather").style.display = "block";
                 document.querySelector(".Error").style.display = "none";
             }

@@ -15,6 +15,7 @@ async function checkWeather(city) {
     } else {
         const data = await response.json();
         document.querySelector(".city").innerHTML = data.location.name;
+        document.querySelector(".time").innerHTML = data.location.localtime;
         document.querySelector(".temp").innerHTML = Math.round(data.current.temp_c) + "°C";
         document.querySelector(".huminidity").innerHTML = data.current.humidity + "%";
         document.querySelector(".Wind").innerHTML = data.current.wind_kph + "Km/h";
@@ -22,7 +23,7 @@ async function checkWeather(city) {
         const weatherCondition = data.current.condition.text;
 
         if (weatherCondition.includes("Patchy rain nearby")) {
-            weathericon.src = "img/patchlyrain .png";
+            weathericon.src = "img/patchlyrain.png";
 
         } else if (weatherCondition.includes("Rain")) {
             weathericon.src = "img/rain.png";
@@ -56,4 +57,10 @@ async function checkWeather(city) {
 }
 searchbtn.addEventListener("click", () => {
     checkWeather(search.value);
+});
+
+
+const checkbox = document.getElementById("checkbox")
+checkbox.addEventListener("change", () => {
+  document.body.classList.toggle("dark")
 });

@@ -7,6 +7,8 @@
     <title>Weather App</title>
     <link rel="icon" type="image/x-icon" href="img/weather-app.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
@@ -21,36 +23,47 @@
         <div class="Error ">
             <img src="img/error.png" alt="error">
             <p>Invalid City </p>
-            
+
         </div>
 
         <div class="weather">
             <img src="img/sun.png" class="weathericon">
-            <h1 class="temp">27°C</h1>
-            <h2 class="city">Colombo</h2>
+            <h1 class="temp"></h1>
+            <h2 class="city"></h2>
+            <h4 class="time">
+                </h2>
 
-            <div class="details">
-                <div class="col">
-                    <img src="img/humidity.png">
-                    <div>
-                        <p class="huminidity"></p>
-                        <p>Humidity</p>
+                <div class="details">
+                    <div class="col">
+                        <img src="img/humidity.png">
+                        <div class="humidity">
+                            <p class="huminidity"></p>
+                            <p>Humidity</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img src="img/wind.png">
+                        <div class="Wind-speed">
+                            <p class="Wind"></p>
+                            <p>Wind Speed</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col">
-                    <img src="img/wind.png">
-                    <div>
-                        <p class="Wind"></p>
-                        <p>Wind Speed</p>
-                    </div>
-                </div>
-            </div>
         </div>
+
     </div>
 
-    
-    <script src="script.js"></script>
+    <div class="checkbox-container">
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="checkbox-label">
+            <img src="img/moon-fill.svg" alt="Dark Mode">
+            <img src="img/brightness-high.svg" alt="Light Mode">
+            <span class="ball"></span>
+        </label>
+    </div>
 
+
+    <script src="script.js"></script>
 </body>
 
 </html>

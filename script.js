@@ -8,7 +8,7 @@ const weathericon = document.querySelector(".weathericon");
 async function checkWeather(city) {
     const response = await fetch(apiUrl + `key=${apiKey}&q=`+city);
     
-    if (response.status == 404) {
+    if (response.status == 400) {
         document.querySelector(".Error").style.display = "block";
         document.querySelector(".weather").style.display = "none";
 
